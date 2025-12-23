@@ -1,0 +1,40 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments - uv
+.venv/
+venv/
+
+# Environment variables
+.env
+*.env
+
+# Evaluation caches
+.deepeval/
+wandb/
+.mflow/
+.pytest_cache/
+
+# Data and generated artifacts
+data/
+
+# Databases
+qdrant/
+
+# Logs and temp
+logs/
+*.log
+
+# OS and editor
+.DS_Store
+.vscode/
+.idea/
+
+# Deprecated scripts
+scripts/deprecated
+
