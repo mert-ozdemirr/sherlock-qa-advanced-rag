@@ -12,19 +12,19 @@ In addition to studying the effectiveness of RAG for literary question answering
 ## 3. System Architecture
 
 User Query  
-&nbsp;&nbsp;↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Embedding Model (Embed the Query)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Qdrant Vector DB (Dense Vector Similarity Search)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Top-K Results (First Retrieval)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Reranker (Cross Encoder)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Final Retrieved Context (Top-K/5 Filtering After Reranking)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Generator (Context + Query, Gemini-2.5-Flash-Lite)  
-     ↓  
+&nbsp;&nbsp;&nbsp;&nbsp;↓  
 Final Answer  
 
 
@@ -56,6 +56,7 @@ Final Answer
 ## Notes
 
 ## License
+
 
 
 
