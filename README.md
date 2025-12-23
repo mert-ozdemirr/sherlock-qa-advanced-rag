@@ -12,7 +12,7 @@ In addition to studying the effectiveness of RAG for literary question answering
 ## 3. System Architecture
 
 User Query  
-     ↓  
+&nbsp;&nbsp;↓  
 Embedding Model (Embed the Query)  
      ↓  
 Qdrant Vector DB (Dense Vector Similarity Search)  
@@ -56,6 +56,7 @@ Final Answer
 ## Notes
 
 ## License
+
 
 
 
