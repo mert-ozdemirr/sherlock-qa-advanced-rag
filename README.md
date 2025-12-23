@@ -11,21 +11,21 @@ In addition to studying the effectiveness of RAG for literary question answering
 
 ## 3. System Architecture
 
-User Query
-   ↓
-Embedding Model (Embed the Query)
-   ↓
-Qdrant Vector DB (Dense Vector Similarity Search)
-   ↓
-Top-K Results (First Retrieval)
-   ↓
-Reranker (Cross Encoder)
-   ↓
-Final Retrieved Context (Top-K/5 Filtering After Reranking)
-   ↓
-Generator (Context + Query, Gemini-2.5-Flash-Lite)
-   ↓
-Final Answer
+User Query  
+   ↓  
+Embedding Model (Embed the Query)  
+   ↓  
+Qdrant Vector DB (Dense Vector Similarity Search)  
+   ↓  
+Top-K Results (First Retrieval)  
+   ↓  
+Reranker (Cross Encoder)  
+   ↓  
+Final Retrieved Context (Top-K/5 Filtering After Reranking)  
+   ↓  
+Generator (Context + Query, Gemini-2.5-Flash-Lite)  
+   ↓  
+Final Answer  
 
 
 ## Project Structure
@@ -56,5 +56,6 @@ Final Answer
 ## Notes
 
 ## License
+
 
 
