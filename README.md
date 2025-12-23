@@ -46,9 +46,40 @@ Data preparation follows a two-stage hierarchical splitting strategy:
 
 The chunk size is treated as a tunable hyperparameter, allowing the impact of different granularity levels on retrieval and generation performance to be systematically studied.
 
-## Setup
+## 5. Retrieval and Generation Pipeline
 
-### Prerequisites
+The system follows a modular Retrieval-Augmented Generation (RAG) pipeline designed to retrieve relevant textual evidence from the corpus and generate grounded answers to user queries. 
+
+### Query-Time Workflow
+
+At inference time, the pipeline proceeds as follows:
+
+1. **Query Embedding**  
+   The user’s natural language query is transformed into a dense vector representation using the same embedding model employed during corpus indexing (`sentence-transformers/all-MiniLM-L6-v2` via FastEmbed).  
+   This ensures consistency between query and document representations in the embedding space.
+
+2. **Dense Vector Retrieval**  
+   The query embedding is used to perform a similarity search against the Qdrant vector database.  
+   The top-*K* most similar text chunks are retrieved based on dense vector similarity.
+
+3. **Cross-Encoder Reranking**  
+   The initial top-*K* candidates are reranked using a cross-encoder model (`jinaai/jina-reranker-v2-base-multilingual`, via FastEmbed).  
+   Unlike dense retrieval, the cross-encoder jointly encodes the query and each candidate passage, enabling more precise semantic relevance estimation.
+
+5. **Context Filtering**  
+   After reranking, only the top *K/5* passages are retained.  
+   This step reduces noise and compresses the retrieved context, ensuring that only the most relevant information is passed to the generation stage.
+
+6. **Answer Generation**  
+   The filtered context, together with the original user query, is provided to a generative language model (`Gemini 2.5 Flash Lite`, via Agno Agent).  
+   The model generates a final answer conditioned on the retrieved evidence.
+
+7. **Final Output**  
+   The generated answer is returned to the user as the system’s response.
+
+### 7. Evaluation Methodology
+
+
 ### Installation
 
 ## Configuration
@@ -72,6 +103,7 @@ The chunk size is treated as a tunable hyperparameter, allowing the impact of di
 ## Notes
 
 ## License
+
 
 
 
