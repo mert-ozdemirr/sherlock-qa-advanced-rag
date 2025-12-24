@@ -329,9 +329,8 @@ The interface provides a lightweight and intuitive environment for querying the 
 
 By integrating the RAG system into an application framework, this project demonstrates not only model and retrieval performance, but also system-level integration and usability considerations.
 
-## 10. Limitations
 
-## Limitations
+## 10. Limitations
 
 While the system demonstrates effective end-to-end behavior and supports systematic experimentation, several limitations should be noted.
 
@@ -363,3 +362,4 @@ While the system demonstrates effective end-to-end behavior and supports systema
 - **Lack of Human Evaluation**  
   All evaluations are performed using automated LLM-as-a-judge metrics.  
   Human evaluation could provide additional qualitative insight, particularly for nuanced or interpretive questions.
+
